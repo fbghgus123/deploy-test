@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Layout } from 'antd';
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Footer, Content } = Layout;
 
 const AppLayout = ({ children }) => {
   return (
     <Layout>
       <Header>
         <Link href="/">
-          <a>홈이동</a>
+          <a href="{() => false}">홈이동</a>
         </Link>
       </Header>
       <Content>
@@ -18,6 +19,9 @@ const AppLayout = ({ children }) => {
       <Footer>Footer</Footer>
     </Layout>
   );
+};
+AppLayout.propTypes = {
+  children: PropTypes.func.isRequired,
 };
 
 export default AppLayout;
