@@ -14,9 +14,9 @@ const SearchList = () => {
   const getBookList = () => {
     axios
       .get(
-        `http://data4library.kr/api/srchBooks?authKey=${process.env.API_KEY}&keyword=베르나르&pageNo=1&pageSize=10&format=json`,
+        `http://data4library.kr/api/srchBooks?authKey=${process.env.NEXT_PUBLIC_LIBRARY_API_KEY}&keyword=베르나르&pageNo=1&pageSize=10&format=json`,
         {
-          'Content-Type': 'application/xml; charset=utf-8',
+          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         }
       )
       .then(function (res) {
